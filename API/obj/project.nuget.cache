@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "N8TIchXphmMM9ZXnQHJXBcFVk3CwZUeaT7ZWWH7VMT9bfWrf63+XeTI252k6wDcOqdOSFy/jpaxwjGNwZZ13Sw==",
+  "dgSpecHash": "XuTgDMv22Gdzc6v/Z6nE5OvoJHHaN8Vhqcc0fyycN6ldAb+012N6SDG3Al5CxWhLXvPwSqTZGA53j7wvyd1NSw==",
   "success": true,
-  "projectFilePath": "/Users/dylandabrowski/Development/PokemonAPI/API/API.csproj",
+  "projectFilePath": "/Users/dylandabrowski/Development/PokedexAPI/API/API.csproj",
   "expectedPackageFiles": [
     "/Users/dylandabrowski/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/dylandabrowski/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",

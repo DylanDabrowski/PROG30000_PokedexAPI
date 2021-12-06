@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/dylandabrowski/Development/PokemonAPI/API/API.csproj": {}
+    "/Users/dylandabrowski/Development/PokedexAPI/API/API.csproj": {}
   },
   "projects": {
-    "/Users/dylandabrowski/Development/PokemonAPI/API/API.csproj": {
+    "/Users/dylandabrowski/Development/PokedexAPI/API/API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/dylandabrowski/Development/PokemonAPI/API/API.csproj",
+        "projectUniqueName": "/Users/dylandabrowski/Development/PokedexAPI/API/API.csproj",
         "projectName": "API",
-        "projectPath": "/Users/dylandabrowski/Development/PokemonAPI/API/API.csproj",
+        "projectPath": "/Users/dylandabrowski/Development/PokedexAPI/API/API.csproj",
         "packagesPath": "/Users/dylandabrowski/.nuget/packages/",
-        "outputPath": "/Users/dylandabrowski/Development/PokemonAPI/API/obj/",
+        "outputPath": "/Users/dylandabrowski/Development/PokedexAPI/API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/dylandabrowski/.nuget/NuGet/NuGet.Config"
