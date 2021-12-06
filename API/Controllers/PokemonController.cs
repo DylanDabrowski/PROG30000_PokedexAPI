@@ -21,5 +21,26 @@ namespace API.Controllers
         {
             _context = context;
         }
+
+        //POST /api/pokemon
+        [HttpPost]
+        public async Task<IActionResult> AddPokemon([FromBody] Pokemon pokemon)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            _context.Pokemon.Add(pokemon);
+            await _context.SaveChangesAsync();
+            return Ok();
+        }
+
+        //GET /api/pokemon
+        [HttpGet]
+        public async Task<IActionResult> GetAllPokemon()
+        {
+            return Ok(_context.Pokemon);
+        }
+
     }
 }

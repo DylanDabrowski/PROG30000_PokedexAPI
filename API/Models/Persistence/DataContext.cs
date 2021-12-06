@@ -13,6 +13,6 @@ namespace API.Models.Persistence
         {
             optionsBuilder.UseSqlite("FileName=Pokemon.db");
         }
-        public DbSet<Pokemon> Users { get; set; }
+        public DbSet<Pokemon> Pokemon { get; set; }
     }
 }
