@@ -18,6 +18,6 @@ namespace API.Models.Entities
         public int Defense { get; set; }
         public int Weight { get; set; }
 
-        public int test;
+        
     }
 }
