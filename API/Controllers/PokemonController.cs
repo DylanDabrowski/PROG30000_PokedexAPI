@@ -44,7 +44,7 @@ namespace API.Controllers
 
         //Get A Pokemon
         //GET /api/pokemon/id
-         [HttpGet("{id}")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> GetOnePokemon(string id)
         {
              try
@@ -62,6 +62,14 @@ namespace API.Controllers
             {
                 return BadRequest();
             }
+        }
+
+        //Get all pokemon of specific type
+        //GET /api/pokemon/type
+        [HttpGet("{type}")]
+        public async Task<IActionResult> GetAllPokemonByType(string type)
+        {
+            
         }
 
 
