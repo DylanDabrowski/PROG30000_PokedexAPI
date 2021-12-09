@@ -30,7 +30,7 @@ namespace API.Controllers
             {
                 return BadRequest(ModelState);
             }
-            _context.Pokemon.Add(pokemon);
+            _context.Pokemons.Add(pokemon);
             await _context.SaveChangesAsync();
             return Ok();
         }
@@ -39,8 +39,31 @@ namespace API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllPokemon()
         {
-            return Ok(_context.Pokemon);
+            return Ok(_context.Pokemons);
         }
+
+        //Get A Pokemon
+        //GET /api/pokemon/id
+         [HttpGet("{id}")]
+        public async Task<IActionResult> GetOnePokemon(string id)
+        {
+             try
+            {
+                var onePokemon = await _context.Pokemons.FindAsync(new Guid(id));
+
+                if (onePokemon is null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(onePokemon);
+            }
+            catch (System.Exception)
+            {
+                return BadRequest();
+            }
+        }
+
 
     }
 }

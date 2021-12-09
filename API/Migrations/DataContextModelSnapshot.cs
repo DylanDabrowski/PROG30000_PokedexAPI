@@ -45,7 +45,7 @@ namespace API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Pokemon");
+                    b.ToTable("Pokemons");
                 });
 #pragma warning restore 612, 618
         }
