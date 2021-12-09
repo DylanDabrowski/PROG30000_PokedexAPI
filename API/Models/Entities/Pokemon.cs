@@ -17,5 +17,7 @@ namespace API.Models.Entities
         public int Attack { get; set; }
         public int Defense { get; set; }
         public int Weight { get; set; }
+
+        public int test;
     }
 }

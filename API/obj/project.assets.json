@@ -1073,19 +1073,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/dylandabrowski/.nuget/packages/": {}
+    "/Users/macowner/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/dylandabrowski/Development/PokedexAPI/API/API.csproj",
+      "projectUniqueName": "/Users/macowner/Desktop/SemesterSevenFiles/DotnetClass/FinalProject/PROG30000_PokedexAPI/API/API.csproj",
       "projectName": "API",
-      "projectPath": "/Users/dylandabrowski/Development/PokedexAPI/API/API.csproj",
-      "packagesPath": "/Users/dylandabrowski/.nuget/packages/",
-      "outputPath": "/Users/dylandabrowski/Development/PokedexAPI/API/obj/",
+      "projectPath": "/Users/macowner/Desktop/SemesterSevenFiles/DotnetClass/FinalProject/PROG30000_PokedexAPI/API/API.csproj",
+      "packagesPath": "/Users/macowner/.nuget/packages/",
+      "outputPath": "/Users/macowner/Desktop/SemesterSevenFiles/DotnetClass/FinalProject/PROG30000_PokedexAPI/API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/dylandabrowski/.nuget/NuGet/NuGet.Config"
+        "/Users/macowner/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -1138,7 +1138,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.400/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.403/RuntimeIdentifierGraph.json"
       }
     }
   }
