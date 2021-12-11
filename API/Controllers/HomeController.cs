@@ -21,10 +21,12 @@ namespace API.Controllers
             _logger = logger;
         }
 
-        //PokemonController pokemonController;
+        //  private readonly DataContext _context;
+        
+        PokemonController pokemonController;
 
-         private readonly DataContext _context;
-
+       DataContext _context =  PokemonController._context;
+       
         public HomeController(DataContext context)
         {
             _context = context;

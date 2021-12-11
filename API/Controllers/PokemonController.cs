@@ -15,7 +15,7 @@ namespace API.Controllers
     [Route("api/[controller]")]
     public class PokemonController : ControllerBase
     {
-        private readonly DataContext _context;
+        public static DataContext _context;
 
         public PokemonController(DataContext context)
         {
