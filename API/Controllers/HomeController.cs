@@ -25,19 +25,19 @@ namespace API.Controllers
         
         PokemonController pokemonController;
 
-       DataContext _context =  PokemonController._context;
+        //    DataContext _context = PokemonController._context;
        
-        public HomeController(DataContext context)
-        {
-            _context = context;
-        }
+        // public HomeController(DataContext context)
+        // {
+        //     _context = context;
+        // }
 
         [HttpGet]
         public IActionResult Index()
         {
             // var allPokemons = pokemonController.GetAllPokemon();
           
-            return View(_context.Pokemons.ToList());
+            return View(Repository.Pokemons);
             
         }
     }
