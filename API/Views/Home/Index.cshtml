@@ -1,8 +1,47 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+@* @model List<Pokemon> *@
+@model IEnumerable<API.Models.Entities.Pokemon>
+@using API.Models.Entities;
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<html>
+    <head>
+        <title>List Of Users</title>
+    </head>
+    <body>
+        
+        @{
+            int i = 1;
+        }    
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Name)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Type)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Description)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Height)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Attack)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Defense)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.Weight)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var pokemon in Model)
+                {
+                    <tr>
+                        <th scope="row">@i</th>
+                        <td>@Html.DisplayNameFor(modelPokemon => pokemon.Name)</td>
+                        <td>@Html.DisplayNameFor(modelPokemon => pokemon.Type)</td>
+                        <td>@Html.DisplayNameFor(modelPokemon => pokemon.Description)</td>
+                        <td>@Html.DisplayNameFor(modelPokemon => pokemon.Height)</td>
+                        <td>@Html.DisplayNameFor(modelPokemon => pokemon.Attack)</td>
+                        <td>@Html.DisplayNameFor(modelPokemon => pokemon.Defense)</td>
+                        <td>@Html.DisplayNameFor(modelPokemon => pokemon.Weight)</td>
+                    </tr>
+                    i = i + 1;
+                }
+            </tbody>
+        </table>
+        @* <a asp-action="Dashboard"> Back to Dashboard </a> *@
+    </body>
+</html>

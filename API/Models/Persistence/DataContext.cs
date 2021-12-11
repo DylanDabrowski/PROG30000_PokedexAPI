@@ -13,6 +13,9 @@ namespace API.Models.Persistence
         {
             optionsBuilder.UseSqlite("FileName=Pokemon.db");
         }
-        public DbSet<Pokemon> Pokemons { get; set; }
+        public DbSet<Pokemon> Pokemons { get; set; } 
+
+        // public IEnumerable<Pokemon> PokemonEnumerable => Pokemons;
+
     }
 }

@@ -66,10 +66,24 @@ namespace API.Controllers
 
         //Get all pokemon of specific type
         //GET /api/pokemon/type
-        [HttpGet("{type}")]
+        [HttpGet("type/{type}")]
         public async Task<IActionResult> GetAllPokemonByType(string type)
         {
-            
+            try
+            {
+                var allPokemonByType = _context.Pokemons.Where(x => x.Type == type);
+
+                if (allPokemonByType is null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(allPokemonByType);
+            }
+            catch (System.Exception)
+            {
+                return BadRequest();
+            }
         }
 
 

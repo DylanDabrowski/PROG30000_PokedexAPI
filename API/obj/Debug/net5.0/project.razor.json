@@ -15634,11 +15634,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/macowner/Desktop/SemesterSevenFiles/DotnetClass/FinalProject/PROG30000_PokedexAPI/API/Views/Home/Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "/Users/macowner/Desktop/SemesterSevenFiles/DotnetClass/FinalProject/PROG30000_PokedexAPI/API/Views/Shared/_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
