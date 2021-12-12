@@ -20,6 +20,14 @@ namespace API.Models.Persistence
             _pokemons.Add(pokemon);
         }
 
+        public static void AddManyPokemon(Pokemon[] pokemon)
+        {
+            for (var i=0; i > pokemon.Count(); i++){
+                 _pokemons.Add(pokemon[i]);
+            }
+           
+        }
+
         public static IEnumerable<Pokemon> Pokemons => _pokemons;
         
     }

@@ -18,7 +18,7 @@ namespace API.Controllers
     {
         public static DataContext _context;
 
-        static Pokemon _pokemon = new Pokemon(); //new(); 
+        static Pokemon[] _pokemon; //new(); 
 
 
         public PokemonController(DataContext context)
@@ -30,13 +30,33 @@ namespace API.Controllers
         [HttpPost]
         public async Task<IActionResult> AddPokemon([FromBody] Pokemon pokemon)
         {
-            _pokemon = pokemon;
+            // _pokemon.Append(pokemon);
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            Repository.AddPokemon(pokemon);
-            _context.Pokemons.Add(pokemon);
+            Repository.AddPokemon(pokemon); //_pokemon[_pokemon.Count()-1]
+            await _context.Pokemons.AddAsync(pokemon); //_pokemon[_pokemon.Count()-1]
+            await _context.SaveChangesAsync();
+            return Ok();
+        }
+
+        //POST /api/pokemon
+        [HttpPost("list")]
+        public async Task<IActionResult> AddManyPokemon([FromBody] Pokemon[] pokemon)
+        {
+            
+                _pokemon = pokemon;
+           
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            Repository.AddManyPokemon(_pokemon);
+            // Repository.Pokemons.Append(_pokemon[0]);
+            await _context.Pokemons.AddRangeAsync(_pokemon);
             await _context.SaveChangesAsync();
             return Ok();
         }

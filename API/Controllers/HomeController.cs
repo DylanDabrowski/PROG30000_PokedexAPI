@@ -23,7 +23,7 @@ namespace API.Controllers
 
         //  private readonly DataContext _context;
         
-        PokemonController pokemonController;
+        // PokemonController pokemonController;
 
         //    DataContext _context = PokemonController._context;
        

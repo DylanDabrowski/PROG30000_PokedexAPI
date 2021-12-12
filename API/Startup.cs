@@ -24,8 +24,9 @@ namespace API
         public void ConfigureServices(IServiceCollection services)
         {
             // services.AddMvc().AddControllersAsServices();
-            services.AddMvc();
-            services.AddControllers();
+            // services.AddMvc();
+            // services.AddControllers();
+            services.AddControllersWithViews();
             services.AddEntityFrameworkSqlite().AddDbContext<DataContext>();
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
             {

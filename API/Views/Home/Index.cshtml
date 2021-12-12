@@ -1,5 +1,5 @@
 @* @model List<Pokemon> *@
-@model IEnumerable<API.Models.Entities.Pokemon>
+@model IEnumerable<Pokemon>
 @using API.Models.Entities;
 
 <html>
@@ -16,13 +16,13 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">@Html.DisplayNameFor(model => model.Name)</th>
-                    <th scope="col">@Html.DisplayNameFor(model => model.Type)</th>
-                    <th scope="col">@Html.DisplayNameFor(model => model.Description)</th>
-                    <th scope="col">@Html.DisplayNameFor(model => model.Height)</th>
-                    <th scope="col">@Html.DisplayNameFor(model => model.Attack)</th>
-                    <th scope="col">@Html.DisplayNameFor(model => model.Defense)</th>
-                    <th scope="col">@Html.DisplayNameFor(model => model.Weight)</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Height</th>
+                    <th scope="col">Attack</th>
+                    <th scope="col">Defense</th>
+                    <th scope="col">Weight</th>
                 </tr>
             </thead>
             <tbody>
@@ -30,13 +30,13 @@
                 {
                     <tr>
                         <th scope="row">@i</th>
-                        <td>@Html.DisplayNameFor(modelPokemon => pokemon.Name)</td>
-                        <td>@Html.DisplayNameFor(modelPokemon => pokemon.Type)</td>
-                        <td>@Html.DisplayNameFor(modelPokemon => pokemon.Description)</td>
-                        <td>@Html.DisplayNameFor(modelPokemon => pokemon.Height)</td>
-                        <td>@Html.DisplayNameFor(modelPokemon => pokemon.Attack)</td>
-                        <td>@Html.DisplayNameFor(modelPokemon => pokemon.Defense)</td>
-                        <td>@Html.DisplayNameFor(modelPokemon => pokemon.Weight)</td>
+                        <td>@pokemon.Name</td>
+                        <td>@pokemon.Type</td>
+                        <td>@pokemon.Description</td>
+                        <td>@pokemon.Height</td>
+                        <td>@pokemon.Attack</td>
+                        <td>@pokemon.Defense</td>
+                        <td>@pokemon.Weight</td>
                     </tr>
                     i = i + 1;
                 }
