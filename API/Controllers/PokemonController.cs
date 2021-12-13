@@ -16,10 +16,7 @@ namespace API.Controllers
     [Route("api/[controller]")]
     public class PokemonController : ControllerBase
     {
-        public static DataContext _context;
-
-        static Pokemon[] _pokemon; //new(); 
-
+        private DataContext _context;
 
         public PokemonController(DataContext context)
         {
@@ -30,13 +27,11 @@ namespace API.Controllers
         [HttpPost]
         public async Task<IActionResult> AddPokemon([FromBody] Pokemon pokemon)
         {
-            // _pokemon.Append(pokemon);
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            Repository.AddPokemon(pokemon); //_pokemon[_pokemon.Count()-1]
-            await _context.Pokemons.AddAsync(pokemon); //_pokemon[_pokemon.Count()-1]
+            await _context.Pokemons.AddAsync(pokemon); 
             await _context.SaveChangesAsync();
             return Ok();
         }
@@ -44,19 +39,14 @@ namespace API.Controllers
         //POST /api/pokemon
         [HttpPost("list")]
         public async Task<IActionResult> AddManyPokemon([FromBody] Pokemon[] pokemon)
-        {
-            
-                _pokemon = pokemon;
-           
+        {           
 
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            Repository.AddManyPokemon(_pokemon);
-            // Repository.Pokemons.Append(_pokemon[0]);
-            await _context.Pokemons.AddRangeAsync(_pokemon);
+            await _context.Pokemons.AddRangeAsync(pokemon);
             await _context.SaveChangesAsync();
             return Ok();
         }
@@ -105,6 +95,26 @@ namespace API.Controllers
                 }
 
                 return Ok(allPokemonByType);
+            }
+            catch (System.Exception)
+            {
+                return BadRequest();
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteOnePokemon(string id)
+        {
+             try
+            {
+                var onePokemon = await _context.Pokemons.FindAsync(new Guid(id));
+
+                if (onePokemon is null)
+                {
+                    return NotFound();
+                }
+                _context.Pokemons.Remove(onePokemon);
+                return Ok();
             }
             catch (System.Exception)
             {

@@ -13,20 +13,6 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
-#line 1 "/Users/macowner/Desktop/SemesterSevenFiles/DotnetClass/FinalProject/PROG30000_PokedexAPI/API/Views/_ViewImports.cshtml"
-using API;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 2 "/Users/macowner/Desktop/SemesterSevenFiles/DotnetClass/FinalProject/PROG30000_PokedexAPI/API/Views/_ViewImports.cshtml"
-using API.Models;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
 #line 3 "/Users/macowner/Desktop/SemesterSevenFiles/DotnetClass/FinalProject/PROG30000_PokedexAPI/API/Views/Home/Index.cshtml"
 using API.Models.Entities;
 
@@ -34,7 +20,6 @@ using API.Models.Entities;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1ede85dc12e901eb47c89e06966ca61f054ff138", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"596ee91360b297ff619c22751a25970a765dc05e", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<Pokemon>>
     {
         #line hidden
@@ -63,7 +48,7 @@ using API.Models.Entities;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("\n<html>\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1ede85dc12e901eb47c89e06966ca61f054ff1383495", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1ede85dc12e901eb47c89e06966ca61f054ff1382917", async() => {
                 WriteLiteral("\n        <title>List Of Users</title>\n    ");
             }
             );
@@ -77,7 +62,7 @@ using API.Models.Entities;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1ede85dc12e901eb47c89e06966ca61f054ff1384489", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1ede85dc12e901eb47c89e06966ca61f054ff1383911", async() => {
                 WriteLiteral("\n        \n");
 #nullable restore
 #line 11 "/Users/macowner/Desktop/SemesterSevenFiles/DotnetClass/FinalProject/PROG30000_PokedexAPI/API/Views/Home/Index.cshtml"

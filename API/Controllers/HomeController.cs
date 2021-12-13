@@ -13,31 +13,20 @@ namespace API.Controllers
     [Route("[controller]")]
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
 
-        [ActivatorUtilitiesConstructorAttribute]
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
 
-        //  private readonly DataContext _context;
-        
-        // PokemonController pokemonController;
-
-        //    DataContext _context = PokemonController._context;
+         private readonly DataContext _context;
+    
        
-        // public HomeController(DataContext context)
-        // {
-        //     _context = context;
-        // }
+        public HomeController(DataContext context)
+        {
+            _context = context;
+        }
 
         [HttpGet]
         public IActionResult Index()
-        {
-            // var allPokemons = pokemonController.GetAllPokemon();
-          
-            return View(Repository.Pokemons);
+        {          
+            return View(_context.Pokemons);
             
         }
     }
