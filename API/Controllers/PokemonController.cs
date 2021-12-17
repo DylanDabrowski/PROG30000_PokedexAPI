@@ -24,6 +24,7 @@ namespace API.Controllers
         }
 
         //POST /api/pokemon
+        // adds 1 pokemon to db
         [HttpPost]
         public async Task<IActionResult> AddPokemon([FromBody] Pokemon pokemon)
         {
@@ -31,15 +32,16 @@ namespace API.Controllers
             {
                 return BadRequest(ModelState);
             }
-            await _context.Pokemons.AddAsync(pokemon); 
+            await _context.Pokemons.AddAsync(pokemon);
             await _context.SaveChangesAsync();
             return Ok();
         }
 
-        //POST /api/pokemon
-        [HttpPost("list")]
+        //POST /api/pokemon/addmany
+        // adds list of pokemon to db
+        [HttpPost("addmany")]
         public async Task<IActionResult> AddManyPokemon([FromBody] Pokemon[] pokemon)
-        {           
+        {
 
             if (!ModelState.IsValid)
             {
@@ -52,18 +54,19 @@ namespace API.Controllers
         }
 
         //GET /api/pokemon
+        // gets all pokemon from db
         [HttpGet]
         public async Task<IActionResult> GetAllPokemon()
         {
             return Ok(_context.Pokemons);
         }
 
-        //Get A Pokemon
-        //GET /api/pokemon/id
+        //GET /api/pokemon/{id}
+        // gets 1 pokemon from db by id
         [HttpGet("{id}")]
         public async Task<IActionResult> GetOnePokemon(string id)
         {
-             try
+            try
             {
                 var onePokemon = await _context.Pokemons.FindAsync(new Guid(id));
 
@@ -80,9 +83,9 @@ namespace API.Controllers
             }
         }
 
-        //Get all pokemon of specific type
-        //GET /api/pokemon/type
-        [HttpGet("type/{type}")]
+        //GET /api/pokemon/{type}
+        // gets list of pokemon from db by type
+        [HttpGet("{type}")]
         public async Task<IActionResult> GetAllPokemonByType(string type)
         {
             try
@@ -102,10 +105,12 @@ namespace API.Controllers
             }
         }
 
+        //DELETE /api/pokemon/{id}
+        // deletes 1 pokemon from db by id
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteOnePokemon(string id)
         {
-             try
+            try
             {
                 var onePokemon = await _context.Pokemons.FindAsync(new Guid(id));
 
@@ -114,6 +119,33 @@ namespace API.Controllers
                     return NotFound();
                 }
                 _context.Pokemons.Remove(onePokemon);
+                return Ok();
+            }
+            catch (System.Exception)
+            {
+                return BadRequest();
+            }
+        }
+
+        //DELETE /api/pokemon/deleteall
+        // deletes 1 pokemon from db by id
+        [HttpDelete("deleteall")]
+        public async Task<IActionResult> DeleteAllPokemon()
+        {
+            try
+            {
+                var pokemons = await _context.Pokemons;
+
+                if (pokemons is null)
+                {
+                    return NotFound();
+                }
+
+                foreach (var i in pokemons)
+                {
+                    _context.Pokemons.Remove(i);
+                }
+
                 return Ok();
             }
             catch (System.Exception)
