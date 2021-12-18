@@ -85,7 +85,7 @@ namespace API.Controllers
 
         //GET /api/pokemon/{type}
         // gets list of pokemon from db by type
-        [HttpGet("{type}")]
+        [HttpGet("/bytype/{type}")]
         public async Task<IActionResult> GetAllPokemonByType(string type)
         {
             try
@@ -94,7 +94,7 @@ namespace API.Controllers
 
                 if (allPokemonByType is null)
                 {
-                    return NotFound();
+                    return NotFound(allPokemonByType);
                 }
 
                 return Ok(allPokemonByType);
@@ -105,10 +105,32 @@ namespace API.Controllers
             }
         }
 
+        //GET /api/pokemon/{name}
+        // gets list of pokemon from db by name
+        [HttpGet("/byname/{name}")]
+        public async Task<IActionResult> GetAllPokemonByName(string name)
+        {
+            try
+            {
+                var allPokemonByName = _context.Pokemons.Where(x => x.Name == name);
+
+                if (allPokemonByName is null)
+                {
+                    return NotFound(allPokemonByName);
+                }
+
+                return Ok(allPokemonByName);
+            }
+            catch (System.Exception)
+            {
+                return BadRequest();
+            }
+        }
+
         //DELETE /api/pokemon/{id}
         // deletes 1 pokemon from db by id
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteOnePokemon(string id)
+        public async Task<IActionResult> DeletePokemon(string id)
         {
             try
             {
@@ -119,6 +141,7 @@ namespace API.Controllers
                     return NotFound();
                 }
                 _context.Pokemons.Remove(onePokemon);
+                await _context.SaveChangesAsync();
                 return Ok();
             }
             catch (System.Exception)
@@ -134,11 +157,8 @@ namespace API.Controllers
         {
             try
             {
-                foreach (var i in _context.Pokemons)
-                {
-                    _context.Pokemons.Remove(i);
-                }
-
+                _context.Pokemons.RemoveRange(_context.Pokemons);
+                await _context.SaveChangesAsync();
                 return Ok();
             }
             catch (System.Exception)
