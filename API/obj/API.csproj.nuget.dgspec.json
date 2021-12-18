@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Development\\PROG30000_PokedexAPI\\api\\API.csproj": {}
+    "C:\\Development\\PROG30000_PokedexAPI\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Development\\PROG30000_PokedexAPI\\api\\API.csproj": {
+    "C:\\Development\\PROG30000_PokedexAPI\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Development\\PROG30000_PokedexAPI\\api\\API.csproj",
+        "projectUniqueName": "C:\\Development\\PROG30000_PokedexAPI\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Development\\PROG30000_PokedexAPI\\api\\API.csproj",
+        "projectPath": "C:\\Development\\PROG30000_PokedexAPI\\API\\API.csproj",
         "packagesPath": "C:\\Users\\Dylan\\.nuget\\packages\\",
-        "outputPath": "C:\\Development\\PROG30000_PokedexAPI\\api\\obj\\",
+        "outputPath": "C:\\Development\\PROG30000_PokedexAPI\\API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

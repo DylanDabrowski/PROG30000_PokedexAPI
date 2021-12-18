@@ -34,8 +34,14 @@ namespace API.Migrations
                     b.Property<int>("Height")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("Number")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Type")
                         .HasColumnType("TEXT");
@@ -46,6 +52,40 @@ namespace API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Pokemons");
+                });
+
+            modelBuilder.Entity("API.Models.Entities.PokemonEvolution", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Number")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<Guid?>("PokemonId")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PokemonId");
+
+                    b.ToTable("PokemonEvolution");
+                });
+
+            modelBuilder.Entity("API.Models.Entities.PokemonEvolution", b =>
+                {
+                    b.HasOne("API.Models.Entities.Pokemon", null)
+                        .WithMany("EvolutionChain")
+                        .HasForeignKey("PokemonId");
+                });
+
+            modelBuilder.Entity("API.Models.Entities.Pokemon", b =>
+                {
+                    b.Navigation("EvolutionChain");
                 });
 #pragma warning restore 612, 618
         }
