@@ -53,12 +53,20 @@ namespace API.Controllers
             return Ok();
         }
 
-        //GET /api/pokemon
+        //GET /api/pokemon/unsorted
         // gets all pokemon from db
-        [HttpGet]
+        [HttpGet("unsorted")]
         public async Task<IActionResult> GetAllPokemon()
         {
             return Ok(_context.Pokemons);
+        }
+
+        //GET /api/pokemon
+        // gets all pokemon from db sorted by "Number"
+        [HttpGet]
+        public async Task<IActionResult> GetAllPokemonSorted()
+        {
+            return Ok(_context.Pokemons.OrderBy(x => x.Number));
         }
 
         //GET /api/pokemon/{id}
@@ -83,9 +91,9 @@ namespace API.Controllers
             }
         }
 
-        //GET /api/pokemon/{type}
+        //GET /api/pokemon/bytype/{type}
         // gets list of pokemon from db by type
-        [HttpGet("/bytype/{type}")]
+        [HttpGet("bytype/{type}")]
         public async Task<IActionResult> GetAllPokemonByType(string type)
         {
             try
@@ -107,7 +115,7 @@ namespace API.Controllers
 
         //GET /api/pokemon/{name}
         // gets list of pokemon from db by name
-        [HttpGet("/byname/{name}")]
+        [HttpGet("byname/{name}")]
         public async Task<IActionResult> GetAllPokemonByName(string name)
         {
             try
