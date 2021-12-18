@@ -134,14 +134,7 @@ namespace API.Controllers
         {
             try
             {
-                var pokemons = await _context.Pokemons;
-
-                if (pokemons is null)
-                {
-                    return NotFound();
-                }
-
-                foreach (var i in pokemons)
+                foreach (var i in _context.Pokemons)
                 {
                     _context.Pokemons.Remove(i);
                 }
